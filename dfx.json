@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "cassava_yield_icp_backend": {
+      "candid": "src/cassava_yield_icp_backend/cassava_yield_icp_backend.did",
+      "package": "cassava_yield_icp_backend",
+      "type": "rust"
+    },
+    "cassava_yield_icp_frontend": {
+      "dependencies": [
+        "cassava_yield_icp_backend"
+      ],
+      "source": [
+        "src/cassava_yield_icp_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "cassava_yield_icp_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

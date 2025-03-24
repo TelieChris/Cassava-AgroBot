@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/cassava_yield_icp_backend"
+]
+resolver = "2"
