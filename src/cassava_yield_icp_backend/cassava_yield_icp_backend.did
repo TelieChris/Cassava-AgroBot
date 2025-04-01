@@ -1,3 +1,8 @@
 service : {
-    "greet": (text) -> (text) query;
+  ask_cassava_question : (text, text) -> (text);
+  get_chat_history : (text) -> (vec text) query;
+  get_example_projects : () -> (vec text) query;
+  get_farming_tips : (text) -> (text);
+  predict_yield : (float64, float64, text, float64) -> (text);
+  save_chat : (text, text, text) -> ();
 }

@@ -3,12 +3,18 @@ name = "cassava_yield_icp_backend"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
+ic-stable-structures = "0.6.0"
 candid = "0.10"
-ic-cdk = "0.16"
-ic-cdk-timers = "0.10" # Feel free to remove this dependency if you don't need timers
+ic-cdk = "0.17.0"  # Replace this with a stable version, rather than alpha
+ic-llm = "0.4.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+regex = "1.9"
+lazy_static = "1.4"
+
+[dev-dependencies]
+tokio = { version = "1.28.1", features = ["full"] }
