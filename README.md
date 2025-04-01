@@ -34,18 +34,15 @@ Cassava AgroBot is an AI-powered assistant designed to provide expert agricultur
   ```sh
   npm install
   ```
-- deploy frontend:
-  ```sh
-  dfx deploy cassava_yield_icp_frontend
-  ```
+
 ### Running Locally:
 - Start the local ICP replica:
   ```sh
   dfx start --clean --background
   ```
-- Deploy the canister:
+- deploy frontend:
   ```sh
-  dfx deploy
+  dfx deploy cassava_yield_icp_frontend
   ```
 - Run the bash script to setup the project
   ```sh
