@@ -1,61 +1,90 @@
-# `cassava_yield_icp`
+# Cassava AgroBot
 
-Welcome to your new `cassava_yield_icp` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+Cassava AgroBot is an AI-powered assistant designed to provide expert agricultural advice on cassava farming. It helps farmers, agronomists, and researchers optimize cassava yield by offering real-time guidance on best farming practices, yield predictions, and soil management using ICP (Internet Computer Protocol).
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## 🚀 Features
+- **Cassava Farming Knowledge Bot**: Provides best practices for soil preparation, planting, and harvesting.
+- **AI-Powered Yield Prediction**: Estimates cassava yield based on rainfall, temperature, soil type, and fertilizer use.
+- **Conversational Assistance**: Engages in interactive discussions to answer cassava farming queries.
+- **Secure & Decentralized**: Powered by ICP, ensuring transparency and security.
 
-To learn more before you start working with `cassava_yield_icp`, see the following documentation available online:
+## 🛠️ Technologies Used
+- **Rust**: Backend logic and canister development
+- **React.js**: Frontend interface
+- **ICP (Internet Computer)**: Decentralized hosting
+- **IC LLM**: AI-powered responses
+- **Candid**: Interface description language for ICP
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Rust Canister Development Guide](https://internetcomputer.org/docs/current/developer-docs/backend/rust/)
-- [ic-cdk](https://docs.rs/ic-cdk)
-- [ic-cdk-macros](https://docs.rs/ic-cdk-macros)
-- [Candid Introduction](https://internetcomputer.org/docs/current/developer-docs/backend/candid/)
+## 🔧 Installation
+### Prerequisites:
+- Install **DFX** (Internet Computer SDK):
+  ```sh
+  sh -ci "$(curl -fsSL https://smartcontracts.org/install.sh)"
+  ```
+- Install **Rust & Cargo**:
+  ```sh
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+- Clone the repository:
+  ```sh
+  git clone https://github.com/TelieChris/Cassava-AgroBot.git
+  cd Cassava-AgroBot
+  ```
+- Install packages:
+  ```sh
+  npm install
+  ```
+- deploy frontend:
+  ```sh
+  dfx deploy cassava_yield_icp_frontend
+  ```
+### Running Locally:
+- Start the local ICP replica:
+  ```sh
+  dfx start --clean --background
+  ```
+- Deploy the canister:
+  ```sh
+  dfx deploy
+  ```
+- Run the bash script to setup the project
+  ```sh
+  npm run setup
+  ```
+- Start the frontend:
+  ```sh
+  cd frontend
+  npm install && npm start
+  ```
 
-If you want to start working on your project right away, you might want to try the following commands:
+## 📌 Usage
+1. **Ask Cassava Farming Questions**:
+   - Example: "What is the best planting season for cassava?"
+2. **Get Yield Prediction**:
+   - Example: "Predict yield for 1000mm rainfall, 27°C temperature, Clay soil, 50kg/ha fertilizer."
+3. **Get Soil Preparation Tips**:
+   - Example: "How should I prepare the soil for cassava farming?"
 
-```bash
-cd cassava_yield_icp/
-dfx help
-dfx canister --help
-```
+## 👥 User Persona
+👩‍🌾 **Primary User**: Farmers looking to optimize cassava production.  
+📊 **Secondary User**: Agronomists, researchers, and policymakers.
 
-## Running the project locally
+## 💡 Business Model
+- **Freemium Model**: Free basic access with premium features for agribusinesses.
+- **Partnerships**: Collaborate with agricultural agencies & cooperatives.
+- **Subscription Plans**: Offer advanced analytics & API integration.
 
-If you want to test your project locally, you can use the following commands:
+## 🤝 Contribution
+We welcome contributions! To contribute:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature-xyz`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature-xyz`)
+5. Open a Pull Request
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
+## 📜 License
+This project is licensed under the MIT License.
 
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
+## 📞 Contact
+For any inquiries, reach out to us at [Your Email] or [Your GitHub].
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
-
-If you have made changes to your backend canister, you can generate a new candid interface with
-
-```bash
-npm run generate
-```
-
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
-```bash
-npm start
-```
-
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
-
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
