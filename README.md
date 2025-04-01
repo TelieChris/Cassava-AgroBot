@@ -35,7 +35,7 @@ Cassava AgroBot is an AI-powered assistant designed to provide expert agricultur
   npm install
   ```
 
-### Running Locally:
+### Running:
 - Start the local ICP replica:
   ```sh
   dfx start --clean --background
@@ -47,11 +47,6 @@ Cassava AgroBot is an AI-powered assistant designed to provide expert agricultur
 - Run the bash script to setup the project
   ```sh
   npm run setup
-  ```
-- Start the frontend:
-  ```sh
-  cd frontend
-  npm install && npm start
   ```
 
 ## 📌 Usage
