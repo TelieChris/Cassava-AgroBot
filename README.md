@@ -79,9 +79,7 @@ We welcome contributions! To contribute:
 4. Push to the branch (`git push origin feature-xyz`)
 5. Open a Pull Request
 
-## 📜 License
-This project is licensed under the MIT License.
 
 ## 📞 Contact
-For any inquiries, reach out to us at [Your Email] or [Your GitHub].
+For any inquiries, reach out to us at twizeyimana1elia@gmail.com or https://github.com/teliechris.
 
